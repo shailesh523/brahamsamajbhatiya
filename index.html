@@ -236,7 +236,6 @@
     <section id="collectionForm" class="section">
         <div class="title-box"><h2>બ્રહ્મ સમાજ ની પુસ્તિકા માટેની માહિતી</h2></div>
         <div class="custom-form">
-          
             <div class="form-group">
                 <label>પૂરેપૂરું નામ (અટક સાથે) *</label>
                 <input type="text" id="coll_name" placeholder="દા.ત. અશોકભાઈ જે. ભોગાયતા">
@@ -478,7 +477,7 @@
 
 <script>
     // ============================================================
-    // ✅ નવો Apps Script URL અહીં ભરેલો છે
+    // ✅ Apps Script URL
     // ============================================================
     const webAppUrl = "https://script.google.com/macros/s/AKfycbxDbI46bhWv2NN_9W5mNYxMqfMc2GwKqiXj9G4Nn4elBPtpTbjfyAob56-TpmCVIZ3MBQ/exec";
 
@@ -621,7 +620,7 @@
     }
 
     // ============================================================
-    // SEARCH & TABLE LOGIC
+    // SEARCH & TABLE LOGIC (નવા પેજમાં ખોલવાનું અને પાછળ જાઓ બટન)
     // ============================================================
     function openResultsInNewWindow(matches, title) {
         const newWin = window.open('', '_blank');
@@ -636,38 +635,39 @@
         `).join('');
 
         newWin.document.write(`
+        <!DOCTYPE html>
         <html>
         <head>
             <title>${title}</title>
             <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
             <link href="https://fonts.googleapis.com/css2?family=Hind+Vadodara:wght@400;600;700&display=swap" rel="stylesheet">
             <style>
-                * { box-sizing: border-box; }
+                * { box-sizing: border-box; margin: 0; padding: 0; }
                 body {
                     font-family: 'Hind Vadodara', sans-serif;
-                    padding: 20px;
+                    padding: 15px;
                     background: #f4f7f9;
-                    margin: 0;
                 }
                 .top-bar {
                     display: flex;
                     align-items: center;
-                    gap: 15px;
+                    justify-content: space-between;
                     flex-wrap: wrap;
+                    gap: 12px;
                     position: sticky;
                     top: 0;
                     background: #f4f7f9;
-                    padding: 12px 0 15px;
+                    padding: 10px 0 15px;
                     z-index: 100;
                     border-bottom: 2px solid #cbd5e0;
                     margin-bottom: 20px;
                 }
                 .back-btn {
-                    background: #002347;
+                    background: #ff8c00;
                     color: #fff;
                     border: none;
-                    padding: 11px 24px;
+                    padding: 10px 22px;
                     border-radius: 30px;
                     font-family: inherit;
                     font-size: 1rem;
@@ -676,18 +676,18 @@
                     display: inline-flex;
                     align-items: center;
                     gap: 8px;
-                    box-shadow: 0 5px 15px rgba(0,35,71,0.25);
+                    box-shadow: 0 4px 12px rgba(255, 140, 0, 0.35);
                     transition: 0.3s;
                 }
                 .back-btn:hover {
-                    background: #ff8c00;
-                    color: #000;
-                    transform: translateY(-2px);
+                    background: #002347;
                 }
-                h2 { margin: 0; color: #002347; font-size: 1.4rem; }
-                table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 10px; overflow: hidden; }
-                th { background: #002347; color: #fff; padding: 15px; }
-                .bottom-bar { text-align: center; margin: 30px 0 10px; }
+                h2 { margin: 0; color: #002347; font-size: 1.3rem; }
+                .table-container { width: 100%; overflow-x: auto; background: #fff; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); border: 1px solid #cbd5e0; }
+                table { width: 100%; border-collapse: collapse; min-width: 600px; }
+                th { background: #002347; color: #fff; padding: 14px 10px; font-size: 0.95rem; border: 1px solid #cbd5e0; text-align: center; }
+                td { padding: 10px; font-size: 0.9rem; }
+                .bottom-bar { text-align: center; margin: 25px 0 15px; }
             </style>
         </head>
         <body>
@@ -696,18 +696,20 @@
                 <h2>${title}</h2>
             </div>
 
-            <table>
-                <thead>
-                    <tr>
-                        <th>ક્રમ</th>
-                        <th>નામ</th>
-                        <th>મોબાઈલ</th>
-                        <th>સભ્યો</th>
-                        <th>સરનામું</th>
-                    </tr>
-                </thead>
-                <tbody>${rows}</tbody>
-            </table>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 50px;">ક્રમ</th>
+                            <th>નામ</th>
+                            <th style="width: 120px;">મોબાઈલ</th>
+                            <th style="width: 70px;">સભ્યો</th>
+                            <th>સરનામું</th>
+                        </tr>
+                    </thead>
+                    <tbody>${rows}</tbody>
+                </table>
+            </div>
 
             <div class="bottom-bar">
                 <button class="back-btn" onclick="goBack()">&#8592; પાછળ જાઓ</button>
@@ -715,16 +717,13 @@
 
             <script>
                 function goBack() {
+                    // ૧. બ્રાઉઝર માટે: જો અલગ ટેબમાં ખૂલ્યું હોય તો ટેબ બંધ કરવાનો પ્રયાસ કરશે
                     window.close();
+
+                    // ૨. એન્ડ્રોઇડ APK માટે: જો ટેબ બંધ ન થાય તો સીધું જ એપના પુસ્તિકા પેજ પર રીડાયરેક્ટ કરી દેશે
                     setTimeout(function () {
-                        if (!window.closed) {
-                            if (window.history.length > 1) {
-                                window.history.back();
-                            } else {
-                                window.location.href = "about:blank";
-                            }
-                        }
-                    }, 150);
+                        window.location.href = "https://shailesh523.github.io/brahamsamajbhatiya/#searchSec";
+                    }, 50);
                 }
             <\/script>
         </body>
