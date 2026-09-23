@@ -634,7 +634,102 @@
                 <td style="padding:12px; border:1px solid #ddd;">${m[2]||"-"}</td>
             </tr>
         `).join('');
-        newWin.document.write(`<html><head><title>${title}</title><style>body{font-family:'Hind Vadodara',sans-serif;padding:20px;background:#f4f7f9;}table{width:100%;border-collapse:collapse;background:#fff;}th{background:#002347;color:#fff;padding:15px;}</style></head><body><h2>${title}</h2><table><thead><tr><th>ક્રમ</th><th>નામ</th><th>મોબાઈલ</th><th>સભ્યો</th><th>સરનામું</th></tr></thead><tbody>${rows}</tbody></table></body></html>`);
+
+        newWin.document.write(`
+        <html>
+        <head>
+            <title>${title}</title>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://fonts.googleapis.com/css2?family=Hind+Vadodara:wght@400;600;700&display=swap" rel="stylesheet">
+            <style>
+                * { box-sizing: border-box; }
+                body {
+                    font-family: 'Hind Vadodara', sans-serif;
+                    padding: 20px;
+                    background: #f4f7f9;
+                    margin: 0;
+                }
+                .top-bar {
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+                    flex-wrap: wrap;
+                    position: sticky;
+                    top: 0;
+                    background: #f4f7f9;
+                    padding: 12px 0 15px;
+                    z-index: 100;
+                    border-bottom: 2px solid #cbd5e0;
+                    margin-bottom: 20px;
+                }
+                .back-btn {
+                    background: #002347;
+                    color: #fff;
+                    border: none;
+                    padding: 11px 24px;
+                    border-radius: 30px;
+                    font-family: inherit;
+                    font-size: 1rem;
+                    font-weight: 700;
+                    cursor: pointer;
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 8px;
+                    box-shadow: 0 5px 15px rgba(0,35,71,0.25);
+                    transition: 0.3s;
+                }
+                .back-btn:hover {
+                    background: #ff8c00;
+                    color: #000;
+                    transform: translateY(-2px);
+                }
+                h2 { margin: 0; color: #002347; font-size: 1.4rem; }
+                table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 10px; overflow: hidden; }
+                th { background: #002347; color: #fff; padding: 15px; }
+                .bottom-bar { text-align: center; margin: 30px 0 10px; }
+            </style>
+        </head>
+        <body>
+            <div class="top-bar">
+                <button class="back-btn" onclick="goBack()">&#8592; પાછળ જાઓ</button>
+                <h2>${title}</h2>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>ક્રમ</th>
+                        <th>નામ</th>
+                        <th>મોબાઈલ</th>
+                        <th>સભ્યો</th>
+                        <th>સરનામું</th>
+                    </tr>
+                </thead>
+                <tbody>${rows}</tbody>
+            </table>
+
+            <div class="bottom-bar">
+                <button class="back-btn" onclick="goBack()">&#8592; પાછળ જાઓ</button>
+            </div>
+
+            <script>
+                function goBack() {
+                    window.close();
+                    setTimeout(function () {
+                        if (!window.closed) {
+                            if (window.history.length > 1) {
+                                window.history.back();
+                            } else {
+                                window.location.href = "about:blank";
+                            }
+                        }
+                    }, 150);
+                }
+            <\/script>
+        </body>
+        </html>
+        `);
         newWin.document.close();
     }
 
