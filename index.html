@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="google-site-verification" content="VGAvKb3Mwpff8q1gvAxyQeHSBRqgN1fVho9QfkYTebU" />
+    <title>બ્રહ્મ સમાજ ભાટિયા | Brahm Samaj Bhatiya - સત્તાવાર વેબસાઇટ</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Vadodara:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <style>
+        :root {
+            --royal-blue: #002347;
+            --deep-orange: #ff8c00;
+            --gold: #ffd700;
+            --light-bg: #f4f7f9;
+            --white: #ffffff;
+            --border-color: #cbd5e0;
+            --shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+        body {
+            font-family: 'Hind Vadodara', sans-serif;
+            background-color: var(--light-bg);
+            color: #2c3e50;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .ad-slider-wrap {
+            position: relative;
+            width: 320px;
+            max-width: 95%;
+            margin: 0 auto 20px;
+            background: #fff;
+            border: 2px solid var(--royal-blue);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .ad-slider-wrap a { width: 100%; height: 100%; display: block; }
+        .ad-slider-wrap img { 
+            width: 100%; height: 100%; 
+            object-fit: fill; 
+            transition: 0.5s; cursor: pointer; display: block; 
+        }
+        .ad-arrow {
+            position: absolute; top: 50%; transform: translateY(-50%);
+            background: rgba(0,35,71,0.6); color: white; border: none;
+            padding: 10px 8px; cursor: pointer; z-index: 10; border-radius: 4px;
+        }
+        .ad-arrow:hover { background: var(--deep-orange); }
+        .ad-arrow.left { left: 0; }
+        .ad-arrow.right { right: 0; }
+
+        .top-marquee {
+            background: linear-gradient(to right, var(--deep-orange), var(--gold));
+            color: #000; padding: 10px 0; font-weight: 700; font-size: 0.95rem; text-align: center;
+        }
+
+        header {
+            background: radial-gradient(circle at center, #ffffff 0%, #eef6ff 100%);
+            padding: 50px 15px; text-align: center; border-bottom: 5px solid var(--royal-blue);
+        }
+
+        .main-hero-img {
+            width: 320px; max-width: 85%; height: auto; border-radius: 25px;
+            box-shadow: 0 20px 50px rgba(0, 35, 71, 0.2); border: 6px solid var(--white);
+            margin-bottom: 25px; animation: floating 3s infinite;
+        }
+
+        @keyframes floating { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+        header h1 { font-size: 2.5rem; color: var(--royal-blue); margin-bottom: 5px; text-transform: uppercase; }
+        header p { font-size: 1.2rem; color: #555; font-weight: 600; }
+
+        nav { background: var(--royal-blue); position: sticky; top: 0; z-index: 1000; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        .nav-wrap {
+            max-width: 1200px; margin: 0 auto; display: flex; overflow-x: auto;
+            white-space: nowrap; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding: 5px;
+        }
+        .nav-wrap::-webkit-scrollbar { display: none; }
+        .nav-link { color: #fff; text-decoration: none; padding: 14px 22px; font-weight: 600; border-radius: 25px; transition: 0.3s; margin: 2px; cursor: pointer; }
+        .nav-link.active { background: var(--deep-orange); color: #000; }
+
+        .content-container { max-width: 1140px; margin: 40px auto; padding: 0 15px; }
+        .section { display: none; animation: fadeInUp 0.5s; }
+        .section.active { display: block; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        .title-box { text-align: center; margin-bottom: 40px; }
+        .title-box h2 { font-size: 2rem; color: var(--royal-blue); position: relative; padding-bottom: 15px; display: inline-block; }
+        .title-box h2::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 80px; height: 5px; background: var(--deep-orange); border-radius: 10px; }
+
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
+        .info-card { background: #fff; padding: 30px; border-radius: 20px; text-align: center; box-shadow: var(--shadow); border-top: 5px solid var(--royal-blue); transition: 0.3s; }
+        .info-card i { font-size: 3rem; color: var(--deep-orange); margin-bottom: 20px; }
+
+        .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .video-card { background: #fff; padding: 15px; border-radius: 15px; box-shadow: var(--shadow); text-align: center; border-top: 5px solid var(--royal-blue); }
+        .video-card iframe { width: 100%; aspect-ratio: 16/9; border-radius: 10px; border: none; }
+        .video-card p { margin-top: 10px; font-weight: bold; color: var(--royal-blue); }
+
+        .directory-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+        @media (min-width: 768px) { .directory-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); } }
+        .pdf-btn, .table-btn { background: #fff; padding: 25px 15px; border-radius: 15px; text-align: center; text-decoration: none; color: var(--royal-blue); font-weight: 700; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-bottom: 5px solid #e74c3c; display: flex; flex-direction: column; align-items: center; cursor: pointer; border-top:none; border-left:none; border-right:none; font-family: inherit; font-size: 1rem; }
+        .pdf-btn i, .table-btn i { font-size: 2.5rem; color: #e74c3c; margin-bottom: 10px; }
+        .table-btn { border-bottom-color: #3498db; }
+        .table-btn i { color: #3498db; }
+
+        .lock-box { background: #fff; padding: 40px 20px; border-radius: 20px; text-align: center; box-shadow: var(--shadow); max-width: 400px; margin: 0 auto; border-top: 5px solid var(--royal-blue); }
+        .lock-box input { width: 100%; padding: 12px; margin: 10px 0; border: 2px solid #ddd; border-radius: 10px; text-align: center; font-size: 1.1rem; outline: none; }
+        .lock-btn { background: var(--royal-blue); color: #fff; border: none; padding: 12px 30px; border-radius: 10px; cursor: pointer; font-weight: bold; width: 100%; }
+        .lock-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+        .donor-search-wrap { max-width: 500px; margin: 0 auto 30px; display: flex; gap: 10px; }
+        .donor-search-wrap input { flex: 1; padding: 12px 20px; border-radius: 25px; border: 2px solid var(--border-color); outline: none; font-family: inherit; }
+        .donor-search-wrap button { background: var(--royal-blue); color: #fff; border: none; padding: 0 25px; border-radius: 25px; cursor: pointer; }
+        .donor-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
+        .donor-card { background: #fff; padding: 20px; border-radius: 15px; box-shadow: var(--shadow); border-left: 5px solid var(--deep-orange); position: relative; }
+        .d-name { font-weight: 700; color: var(--royal-blue); display: block; }
+        .d-amount { color: #2e7d32; font-weight: 800; margin-top: 5px; display: block; }
+
+        .edu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 20px; }
+        @media (max-width: 600px) { .edu-grid { grid-template-columns: 1fr; } }
+        .edu-card { background: #fff; padding: 20px; border-radius: 15px; box-shadow: var(--shadow); display: flex; align-items: center; gap: 15px; border: 1px solid #eee; }
+        .edu-icon { width: 100px; height: 50px; background: #f0f7ff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--royal-blue); font-size: 1.2rem; }
+
+        .table-wrap { width: 100%; background: #fff; border-radius: 15px; box-shadow: var(--shadow); overflow-x: auto; margin-top: 20px; border: 1px solid var(--border-color); }
+        .modern-table { width: 100%; border-collapse: collapse; min-width: 750px; border: 1px solid var(--border-color); }
+        .modern-table th { background: var(--royal-blue); color: #fff; padding: 15px 10px; text-align: center; font-size: 0.95rem; border: 1px solid var(--border-color); }
+        .modern-table td { padding: 12px 10px; border: 1px solid var(--border-color); font-weight: 500; font-size: 0.9rem; text-align: center; }
+        .passport-box { width: 65px; height: 65px; margin: 0 auto; border-radius: 8px; border: 2px solid var(--deep-orange); overflow: hidden; }
+        .passport-box img { width: 100%; height: 100%; object-fit: cover; }
+
+        @media (max-width: 600px) {
+            .mobile-fit-table { min-width: 100% !important; }
+            .mobile-fit-table thead { display: none; }
+            .mobile-fit-table tr { display: block; margin-bottom: 15px; border: 2px solid var(--royal-blue); border-radius: 15px; padding: 10px; background: #fff; }
+            .mobile-fit-table td { display: flex; justify-content: space-between; align-items: center; text-align: right; border: none !important; padding: 8px 5px; }
+            .mobile-fit-table td::before { content: attr(data-label); font-weight: bold; text-align: left; color: var(--royal-blue); flex-basis: 40%; }
+        }
+
+        .leader-flex { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
+        .leader-box { background: #fff; padding: 20px; border-radius: 20px; box-shadow: var(--shadow); text-align: center; width: 260px; }
+        .leader-square { width: 210px; height: 210px; margin: 0 auto 15px; border-radius: 15px; overflow: hidden; border: 4px solid var(--deep-orange); }
+        .leader-square img { width: 100%; height: 100%; object-fit: cover; }
+
+        .custom-form { background: #fff; padding: 30px; border-radius: 20px; box-shadow: var(--shadow); max-width: 600px; margin: 0 auto; border-top: 5px solid var(--royal-blue); }
+        .custom-form .form-group { margin-bottom: 15px; text-align: left; }
+        .custom-form label { display: block; margin-bottom: 5px; font-weight: 600; color: var(--royal-blue); }
+        .custom-form input, .custom-form textarea { width: 100%; padding: 12px; border: 2px solid #eee; border-radius: 10px; outline: none; font-family: inherit; font-size: 1rem; }
+        .custom-form textarea { height: 120px; resize: none; }
+        .whatsapp-btn { background: #25D366; color: #fff; border: none; padding: 15px; border-radius: 10px; cursor: pointer; font-weight: bold; width: 100%; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; gap: 10px; transition: 0.3s; }
+        .whatsapp-btn:hover { background: #128C7E; }
+
+        footer { background: #0a111a; color: #bdc3c7; padding: 60px 15px 20px; border-top: 5px solid var(--deep-orange); text-align: center; margin-top: 60px; }
+        .footer-grid { max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 40px; }
+        @media (min-width: 768px) { .footer-grid { grid-template-columns: repeat(3, 1fr); text-align: left; } }
+        .footer-col h3 { color: var(--gold); margin-bottom: 20px; font-size: 1.5rem; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 10px; }
+        .footer-links a { color: #bdc3c7; text-decoration: none; cursor: pointer; transition: 0.3s; }
+        .footer-links a:hover { color: var(--gold); }
+        .social-bar a { display: inline-block; width: 45px; height: 45px; background: rgba(255,255,255,0.1); color: #fff; text-align: center; line-height: 45px; border-radius: 50%; margin: 0 10px; transition: 0.3s; }
+        .social-bar a:hover { background: var(--deep-orange); }
+
+        .loader-box { display: none; text-align: center; padding: 20px; color: var(--royal-blue); }
+        .whatsapp-float { position: fixed; bottom: 30px; right: 25px; background: #25D366; color: #fff; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 35px; z-index: 2000; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+<div class="top-marquee">
+    <marquee behavior="scroll" direction="left" scrollamount="6">
+        🙏 આપના ધંધા રોજગારને લગતી જાહેરાતો માટેના પેમ્પલેટ,કાર્ડ,કે આપના ધંધા રોજગારની સોશિયલ મીડિયાની પ્રોફાઈલ આ વેબસાઇટ પર આપવા માટે હિતેષભાઈ લીલાધરભાઇ ભોગાયતા નો સંપર્ક કરવો. | જય પરશુરામ! 🙏
+    </marquee>
+</div>
+
+<header>
+    <div class="ad-slider-wrap">
+        <button class="ad-arrow left" onclick="prevAd()"><i class="fas fa-chevron-left"></i></button>
+        <a id="adLink" href="#" target="_blank">
+            <img id="adImg" src="" alt="Advertisement">
+        </a>
+        <button class="ad-arrow right" onclick="nextAd()"><i class="fas fa-chevron-right"></i></button>
+    </div>
+    <h1 class="animate__animated animate__fadeInDown">બ્રહ્મ સમાજ ભાટિયા</h1>
+    <p>એકતા • સંગઠન • સેવા</p>
+</header>
+
+<nav>
+    <div class="nav-wrap">
+        <a onclick="showPage('home')" class="nav-link active" id="link-home"><i class="fas fa-home"></i> મુખ્ય પૃષ્ઠ</a>
+        <a onclick="showPage('collectionForm')" class="nav-link" id="link-collectionForm"><i class="fas fa-edit"></i> માહિતી એકત્રીકરણ</a>
+        <a onclick="showPage('searchSec')" class="nav-link" id="link-searchSec"><i class="fas fa-search"></i> બ્રહ્મ સમાજ પુસ્તિકા</a>
+        <a onclick="showPage('donors')" class="nav-link" id="link-donors"><i class="fas fa-hand-holding-heart"></i> દાતાશ્રીઓની યાદી</a>
+        <a onclick="showPage('education')" class="nav-link" id="link-education"><i class="fas fa-graduation-cap"></i> શિક્ષણ સમિતિ</a>
+        <a onclick="showPage('events')" class="nav-link" id="link-events"><i class="fas fa-calendar-alt"></i> કાર્યક્રમો</a>
+        <a onclick="showPage('directory')" class="nav-link" id="link-directory"><i class="fas fa-folder-open"></i> સંપર્ક ડિરેક્ટરી</a>
+        <a onclick="showPage('management')" class="nav-link" id="link-management"><i class="fas fa-university"></i> સંચાલક મંડળ</a>
+        <a onclick="showPage('leaders')" class="nav-link" id="link-leaders"><i class="fas fa-users-cog"></i> પ્રમુખ-ઉપપ્રમુખ યાદી</a>
+        <a onclick="showPage('gallery')" class="nav-link" id="link-gallery"><i class="fas fa-images"></i> ફોટો ગેલેરી</a>
+        <a onclick="showPage('videoSec')" class="nav-link" id="link-videoSec"><i class="fas fa-video"></i> વિડિઓ</a>
+        <a onclick="showPage('message')" class="nav-link" id="link-message"><i class="fas fa-paper-plane"></i> સંદેશ મોકલો</a>
+    </div>
+</nav>
+
+<div class="content-container">
+    
+    <!-- 1. HOME SECTION -->
+    <section id="home" class="section active">
+        <div class="title-box">
+            <h2>જય પરશુરામ!</h2>
+            <p style="margin-top: 15px;">બ્રહ્મ સમાજ ભાટિયાના તમામ જ્ઞાતિજનોને એક તાંતણે બાંધવાના હેતુથી આ ડિજિટલ પ્લેટફોર્મ તૈયાર કરવામાં આવ્યું છે.</p>
+        </div>
+        <div class="info-grid">
+            <div class="info-card"><i class="fas fa-users"></i><h4>સંગઠન અને એકતા</h4><p>ભાટિયા બ્રહ્મ સમાજના તમામ પરિવારો વચ્ચે પરસ્પર સંપર્ક, સહયોગ અને એકતા જાળવી રાખવી.</p></div>
+            <div class="info-card"><i class="fas fa-graduation-cap"></i><h4>શિક્ષણ અને પ્રોત્સાહન</h4><p>જ્ઞાતિના તેજસ્વી વિદ્યાર્થીઓને સરસ્વતી સન્માન દ્વારા પ્રોત્સાહિત કરી શિક્ષણક્ષેત્રે આગળ વધારવા.</p></div>
+            <div class="info-card"><i class="fas fa-hand-holding-heart"></i><h4>સામાજિક સેવા</h4><p>જરૂરિયાતમંદ જ્ઞાતિજનોને મેડિકલ સહાય, આર્થિક મદદ અને અન્ય સામાજિક કાર્યોમાં સહયોગ આપવો.</p></div>
+            <div class="info-card"><i class="fas fa-om"></i><h4>સાંસ્કૃતિક વારસો</h4><p>ભગવાન પરશુરામ જન્મોત્સવ અને અન્ય ધાર્મિક તહેવારોની ઉજવણી દ્વારા સંસ્કૃતિનું જતન કરવું.</p></div>
+            <div class="info-card"><i class="fas fa-address-book"></i><h4>ડિજિટલ ડિરેક્ટરી</h4><p>સમાજના તમામ પરિવારોની માહિતી એકત્ર કરી સંપર્ક સૂચિ બનાવવી જેથી પરસ્પર સંપર્ક સરળ રહે.</p></div>
+            <div class="info-card"><i class="fas fa-building"></i><h4>વાડી સંચાલન</h4><p>બ્રહ્મ સમાજ વાડીના માધ્યમથી સામાજિક પ્રસંગો માટે સુવિધા ઉપલપ્ધ કરાવવી અને વિકાસ કરવો.</p></div>
+        </div>
+    </section>
+
+    <!-- 2. COLLECTION FORM -->
+    <section id="collectionForm" class="section">
+        <div class="title-box"><h2>બ્રહ્મ સમાજ ની પુસ્તિકા માટેની માહિતી</h2></div>
+        <div class="custom-form">
+          
+            <div class="form-group">
+                <label>પૂરેપૂરું નામ (અટક સાથે) *</label>
+                <input type="text" id="coll_name" placeholder="દા.ત. અશોકભાઈ જે. ભોગાયતા">
+            </div>
+            <div class="form-group">
+                <label>મોબાઈલ નંબર *</label>
+                <input type="tel" id="coll_mobile" placeholder="૧૦ અંકનો મોબાઈલ નંબર">
+            </div>
+            <div class="form-group">
+                <label>વર્તમાન સરનામું *</label>
+                <textarea id="coll_address" placeholder="તમારું પૂરું સરનામું લખો"></textarea>
+            </div>
+            <div class="form-group">
+                <label>પરિવારના કુલ સભ્યોની સંખ્યા *</label>
+                <input type="number" id="coll_members" placeholder="સભ્યોની સંખ્યા લખો">
+            </div>
+            
+            <button onclick="sendCollectionWhatsApp()" class="whatsapp-btn">
+                <i class="fab fa-whatsapp"></i> માહિતી વોટ્સએપ પર મોકલો
+            </button>
+            <p style="font-size: 0.8rem; color: #777; margin-top: 10px; text-align: center;">* તમારી વિગતો સુરક્ષિત રીતે પ્રમુખશ્રી સુધી પહોંચાડવામાં આવશે.</p>
+        </div>
+    </section>
+
+    <!-- 3. MEMBER SEARCH SECTION (PIN LOGIN) -->
+    <section id="searchSec" class="section">
+        <div class="title-box"><h2>બ્રહ્મ સમાજ પુસ્તિકા</h2></div>
+        
+        <div id="searchLoginUI" class="lock-box">
+            <i class="fas fa-user-lock" style="font-size: 3rem; color: var(--royal-blue); margin-bottom: 15px;"></i>
+            <h3>સભ્ય લોગીન</h3>
+            <p>પુસ્તિકા જોવા માટે યુઝર નેમ અને સિક્રેટ પિન નાખો.</p>
+            <input type="text" class="pinUserShared" placeholder="યુઝર નેમ" autocomplete="off">
+            <input type="password" class="pinPassShared" placeholder="સિક્રેટ પિન" autocomplete="off">
+            <button onclick="handlePinLogin(this)" class="lock-btn">લોગીન</button>
+            <p class="pinErrorShared" style="color: red; font-size: 0.85rem; margin-top: 10px; display: none;"></p>
+        </div>
+
+        <div id="searchContent" style="display: none;">
+            <div style="text-align: center; margin-bottom: 25px; background: #eef6ff; padding: 15px; border-radius: 10px;">
+                <p>સ્વાગત છે! તમે લોગીન છો. <a href="#" onclick="logoutUser(event)" style="color:red; font-weight:bold; margin-left:10px;">લોગ આઉટ</a></p>
+            </div>
+
+            <div class="directory-grid" style="margin-bottom: 30px;">
+                <button onclick="filterBySurname('આરંભડીયા')" class="table-btn"><i class="fas fa-table"></i>આરંભડીયા પરિવાર</button>
+                <button onclick="filterBySurname('પુરોહિત')" class="table-btn"><i class="fas fa-table"></i>પુરોહિત પરિવાર</button>
+                <button onclick="filterBySurname('જોષી')" class="table-btn"><i class="fas fa-table"></i>જોષી પરિવાર</button>
+                <button onclick="filterBySurname('ભોગાયતા')" class="table-btn"><i class="fas fa-table"></i>ભોગાયતા પરિવાર</button>
+                <button onclick="filterBySurname('રાજ્યગુરુ')" class="table-btn"><i class="fas fa-table"></i>રાજ્યગુરુ પરિવાર</button>
+                <button onclick="filterBySurname('અબોટી')" class="table-btn"><i class="fas fa-table"></i>અબોટી પરિવાર</button>
+                <button onclick="filterBySurname('ALL')" class="table-btn" style="grid-column: span 2; border-bottom-color: var(--royal-blue);"><i class="fas fa-users"></i>સમસ્ત બ્રહ્મ સમાજ યાદી</button>
+            </div>
+
+            <div style="text-align:center; background:#fff; padding:20px; border-radius:20px; box-shadow:var(--shadow); max-width:600px; margin:0 auto 20px;">
+                <input type="text" id="memberInput" style="width:100%; padding:14px; border:2px solid #eee; border-radius:30px; outline:none;" placeholder="નામથી શોધો (દા.ત. અશોકભાઈ)...">
+                <button onclick="doSearch()" style="background:var(--royal-blue); color:white; padding:12px 40px; border:none; border-radius:30px; font-weight:700; margin-top:15px; cursor:pointer;">શોધો</button>
+                <div id="searchLoader" class="loader-box"><i class="fas fa-spinner fa-spin fa-2x"></i></div>
+            </div>
+            
+            <div id="resBox" style="display:none;"></div>
+        </div>
+    </section>
+
+    <!-- 4. DONORS SECTION -->
+    <section id="donors" class="section">
+        <div class="title-box"><h2>બ્રહ્મ સમાજવાડીના દાતાશ્રીઓની યાદી</h2></div>
+        <div class="donor-search-wrap">
+            <input type="text" id="donorSearchInput" placeholder="દાતાનું નામ લખો..." onkeyup="filterDonors()">
+            <button onclick="filterDonors()"><i class="fas fa-search"></i></button>
+        </div>
+        <div id="donorLoader" class="loader-box"><i class="fas fa-spinner fa-spin fa-2x"></i></div>
+        <div id="donorGrid" class="donor-grid"></div>
+    </section>
+
+    <!-- 5. EDUCATION SECTION -->
+    <section id="education" class="section">
+        <div class="title-box"><h2>શિક્ષણ સમિતિ</h2></div>
+        <div id="eduLoader" class="loader-box"><i class="fas fa-spinner fa-spin fa-2x"></i></div>
+        <div id="eduGrid" class="edu-grid"></div>
+    </section>
+
+    <!-- 6. EVENTS -->
+    <section id="events" class="section">
+        <div class="title-box"><h2>આગામી કાર્યક્રમો</h2></div>
+        <div class="info-card" style="text-align: left; border-left: 10px solid var(--deep-orange);">
+            <h3 style="color: var(--royal-blue);">૧. પાંચમો સરસ્વતી સન્માન સમારોહ</h3>
+            <p style="margin: 15px 0;"><strong>તારીખ:</strong> ૨૯-૦૭-૨૦૨૬ | <strong>સ્થળ:</strong> ભાટિયા</p>
+            <a href="https://api.whatsapp.com/send?text=*બ્રહ્મ સમાજ ભાટિયા*" target="_blank" style="background:#25D366; color:white; padding:12px 25px; border-radius:30px; text-decoration:none; font-weight:bold; display:inline-block;"><i class="fab fa-whatsapp"></i> શેર કરો</a>
+        </div>
+    </section>
+
+    <!-- 7. CONTACT DIRECTORY (PIN LOGIN) -->
+    <section id="directory" class="section">
+        <div class="title-box"><h2>પરિવાર યાદી (PDF)</h2></div>
+        
+        <div id="directoryLoginUI" class="lock-box">
+            <i class="fas fa-user-lock" style="font-size: 3rem; color: var(--royal-blue); margin-bottom: 15px;"></i>
+            <h3>સભ્ય લોગીન</h3>
+            <p>પરિવાર યાદી જોવા માટે યુઝર નેમ અને સિક્રેટ પિન નાખો.</p>
+            <input type="text" class="pinUserShared" placeholder="યુઝર નેમ" autocomplete="off">
+            <input type="password" class="pinPassShared" placeholder="સિક્રેટ પિન" autocomplete="off">
+            <button onclick="handlePinLogin(this)" class="lock-btn">લોગીન</button>
+            <p class="pinErrorShared" style="color: red; font-size: 0.85rem; margin-top: 10px; display: none;"></p>
+        </div>
+
+        <div id="directoryContent" class="directory-grid" style="display: none;">
+            <div style="grid-column: 1/-1; text-align: center; margin-bottom: 15px; background: #eef6ff; padding: 10px; border-radius: 10px;">
+                <p>સ્વાગત છે! તમે લોગીન છો. <a href="#" onclick="logoutUser(event)" style="color:red; font-weight:bold; margin-left:10px;">લોગ આઉટ</a></p>
+            </div>
+            <a href="https://drive.google.com/file/d/16gYNenrP94dS9-Ps9_wKwG0sMCc14Ftn/view" target="_blank" class="pdf-btn"><i class="fas fa-file-pdf"></i>આરંભડીયા પરિવાર</a>
+            <a href="https://drive.google.com/file/d/1sz0l5p-EXybTdqL91L3WcxbBEKpeJIAd/view" target="_blank" class="pdf-btn"><i class="fas fa-file-pdf"></i>પુરોહિત પરિવાર</a>
+            <a href="https://drive.google.com/file/d/1RCFR4eHrjSdoHhQB1mxyX86oDRG0QLTO/view" target="_blank" class="pdf-btn"><i class="fas fa-file-pdf"></i>જોષી પરિવાર</a>
+            <a href="https://drive.google.com/file/d/1MZ_F0wAJX-bx41ClOwwNyR5Dv4QIESVl/view" target="_blank" class="pdf-btn"><i class="fas fa-file-pdf"></i>ભોગાયતા પરિવાર</a>
+            <a href="https://drive.google.com/file/d/1w81DzE2x8abXcwI4JLyqinUzOTcxL34n/view" target="_blank" class="pdf-btn"><i class="fas fa-file-pdf"></i>રાજ્યગુરુ પરિવાર</a>
+            <a href="https://drive.google.com/file/d/1vNLcQEFlT2Z-Ds4l8KLgNk21ONWfPYdw/view" target="_blank" class="pdf-btn"><i class="fas fa-file-pdf"></i>અબોટી પરિવાર</a>
+            <a href="https://drive.google.com/file/d/1M8fjlRP4CweiCYr2o_fIoZXtmbwPitgt/view" target="_blank" class="pdf-btn" style="grid-column: span 2; border-bottom-color: var(--royal-blue);"><i class="fas fa-users"></i>સમસ્ત બ્રહ્મ સમાજ યાદી</a>
+        </div>
+    </section>
+
+    <!-- 8. MANAGEMENT -->
+    <section id="management" class="section">
+        <div class="title-box"><h2>વાડી સંચાલક મંડળ</h2></div>
+        <div class="table-wrap">
+            <table class="modern-table mobile-fit-table">
+                <thead><tr><th>ફોટો</th><th>નામ</th><th>હોદ્દો</th><th>મોબાઈલ</th></tr></thead>
+                <tbody>
+                    <tr>
+                        <td data-label="ફોટો"><div class="passport-box"><img src="https://lh3.googleusercontent.com/d/1R7rF5-4_HGs7rztdc3vYMHS1D3s_4UyS"></div></td>
+                        <td data-label="નામ">શ્રી હિતેષભાઇ ભોગાયતા</td>
+                        <td data-label="હોદ્દો">પ્રમુખશ્રી</td>
+                        <td data-label="મોબાઈલ">94272 24308</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- 9. LEADERS -->
+    <section id="leaders" class="section">
+        <div class="title-box"><h2>વર્તમાન હોદ્દેદારો</h2></div>
+        <div class="leader-flex">
+            <div class="leader-box">
+                <div class="leader-square"><img src="https://lh3.googleusercontent.com/d/1R7rF5-4_HGs7rztdc3vYMHS1D3s_4UyS"></div>
+                <h3>હિતેષભાઇ ભોગાયતા</h3>
+                <p style="color: var(--deep-orange); font-weight: bold;">પ્રમુખશ્રી</p>
+                <p style="font-size: 0.9rem; margin-top: 5px;"><i class="fas fa-phone-alt"></i> 9427224308</p>
+            </div>
+            <div class="leader-box">
+                <div class="leader-square"><img src="https://i.ibb.co/Jw5Mc1Mw/Screenshot-2026-07-18-19-37-39-71-6012fa4d4ddec268fc5c7112cbb265e7.jpg"></div>
+                <h3>સંજયભાઈ આરંભડીયા</h3>
+                <p style="color: var(--deep-orange); font-weight: bold;">ઉપપ્રમુખશ્રી</p>
+                <p style="font-size: 0.9rem; margin-top: 5px;"><i class="fas fa-phone-alt"></i> 9033549034</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. GALLERY -->
+    <section id="gallery" class="section">
+        <div class="title-box"><h2>ફોટો ગેલેરી</h2></div>
+        <div style="text-align: center;">
+            <a href="https://drive.google.com/drive/folders/1dynSqg1abD4sEaDGxAn8HAkFQ1wwFl23" target="_blank" class="pdf-btn" style="display: inline-block; width: 300px;"><i class="fab fa-google-drive"></i> સરસ્વતિ સન્માન સમારોહ ૨૦૨૬ </a>
+        </div>
+    </section>
+
+    <!-- 11. VIDEO SECTION -->
+    <section id="videoSec" class="section">
+        <div class="title-box"><h2>વિડિઓ ગેલેરી</h2></div>
+        <div class="video-grid">
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/Sbqci_JQ5hY" allowfullscreen></iframe>
+                </div>
+                <p class="video-title">સરસ્વતિ સન્માન સમારોહ ૨૦૨૬ દિપ પ્રાગટ્ય</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 12. MESSAGE SECTION -->
+    <section id="message" class="section">
+        <div class="title-box"><h2>સંદેશ મોકલો</h2></div>
+        <div class="custom-form">
+            <div class="form-group">
+                <label>તમારું નામ *</label>
+                <input type="text" id="wa_name" placeholder="તમારું નામ લખો...">
+            </div>
+            <div class="form-group">
+                <label>મોબાઈલ નંબર *</label>
+                <input type="tel" id="wa_mobile" placeholder="૧૦ અંકનો નંબર...">
+            </div>
+            <div class="form-group">
+                <label>ઇ મેઇલ આઈ.ડી *</label>
+                <input type="email" id="wa_email" placeholder="તમારો ઈમેઈલ ફરજિયાત ભરવું">
+            </div>
+            <div class="form-group">
+                <label>સંદેશો લખો *</label>
+                <textarea id="wa_msg" placeholder="તમારો સંદેશ અહીં લખો..."></textarea>
+            </div>
+            <button onclick="sendWhatsAppMessage()" class="whatsapp-btn">
+                <i class="fab fa-whatsapp"></i> વોટ્સએપ પર મોકલો
+            </button>
+            <p style="font-size: 0.8rem; color: #777; margin-top: 10px; text-align: center;">* ફરજિયાત માહિતી</p>
+        </div>
+    </section>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-grid">
+        <div class="footer-col">
+            <h3>બ્રહ્મ સમાજ ભાટિયા</h3>
+            <p>જ્ઞાતિના વિકાસ, સંગઠન અને સેવાના ઉમદા હેતુ સાથે કાર્યરત ભાટિયા બ્રહ્મ સમાજની આ સત્તાવાર વેબસાઇટ છે.</p>
+            <div class="social-bar">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://api.whatsapp.com/send?phone=919427224308"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+        <div class="footer-col">
+            <h3>ઝડપી લિંક્સ</h3>
+            <ul class="footer-links">
+                <li><a onclick="showPage('home')">મુખ્ય પૃષ્ઠ</a></li>
+                <li><a onclick="showPage('collectionForm')">માહિતી એકત્રીકરણ</a></li>
+                <li><a onclick="showPage('directory')">પરિવાર યાદી</a></li>
+                <li><a onclick="showPage('videoSec')">વિડિઓ</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h3>સંપર્ક માહિતી</h3>
+            <p><i class="fas fa-map-marker-alt" style="color:var(--gold);"></i> બ્રહ્મ સમાજ વાડી, ભાટિયા.</p>
+            <p style="margin-top:10px;"><i class="fas fa-phone-alt" style="color:var(--gold);"></i> +91 94272 24308</p>
+        </div>
+    </div>
+    <div style="margin-top:40px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.1);">
+        <p>&copy; 2026 બ્રહ્મ સમાજ ભાટિયા | જય પરશુરામ!</p>
+    </div>
+</footer>
+
+<a href="https://api.whatsapp.com/send?phone=919427224308" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<script>
+    // ============================================================
+    // ✅ નવો Apps Script URL અહીં ભરેલો છે
+    // ============================================================
+    const webAppUrl = "https://script.google.com/macros/s/AKfycbxDbI46bhWv2NN_9W5mNYxMqfMc2GwKqiXj9G4Nn4elBPtpTbjfyAob56-TpmCVIZ3MBQ/exec";
+
+    // ============================================================
+    // PIN BASED LOGIN SYSTEM
+    // ============================================================
+    const LOGIN_KEY = 'bsb_logged_in';
+    const USER_KEY  = 'bsb_username';
+
+    function isLoggedIn() {
+        return sessionStorage.getItem(LOGIN_KEY) === 'true';
+    }
+
+    function setLoggedIn(state, username) {
+        if (state) {
+            sessionStorage.setItem(LOGIN_KEY, 'true');
+            if (username) sessionStorage.setItem(USER_KEY, username);
+        } else {
+            sessionStorage.removeItem(LOGIN_KEY);
+            sessionStorage.removeItem(USER_KEY);
+        }
+    }
+
+    function updateAuthUI() {
+        const logged = isLoggedIn();
+        const sL = document.getElementById('searchLoginUI');
+        const sC = document.getElementById('searchContent');
+        const dL = document.getElementById('directoryLoginUI');
+        const dC = document.getElementById('directoryContent');
+
+        if (logged) {
+            if (sL) sL.style.display = 'none';
+            if (sC) sC.style.display = 'block';
+            if (dL) dL.style.display = 'none';
+            if (dC) dC.style.display = 'grid';
+        } else {
+            if (sL) sL.style.display = 'block';
+            if (sC) sC.style.display = 'none';
+            if (dL) dL.style.display = 'block';
+            if (dC) dC.style.display = 'none';
+        }
+    }
+
+    async function handlePinLogin(btnEl) {
+        const activeSection = document.querySelector('.section.active');
+        const username = activeSection.querySelector('.pinUserShared').value.trim();
+        const pin = activeSection.querySelector('.pinPassShared').value.trim();
+        const errBox = activeSection.querySelector('.pinErrorShared');
+
+        errBox.style.display = 'none';
+
+        if (!username || !pin) {
+            errBox.innerText = "કૃપા કરીને યુઝર નેમ અને સિક્રેટ પિન બંને ભરો.";
+            errBox.style.display = 'block';
+            return;
+        }
+
+        const oldText = btnEl.innerHTML;
+        btnEl.disabled = true;
+        btnEl.innerHTML = '<i class="fas fa-spinner fa-spin"></i> ચકાસી રહ્યું છે...';
+
+        try {
+            const url = webAppUrl
+                + "?action=login"
+                + "&username=" + encodeURIComponent(username)
+                + "&pin=" + encodeURIComponent(pin)
+                + "&t=" + new Date().getTime();
+
+            const res = await fetch(url, { cache: "no-store" });
+            const data = await res.json();
+
+            if (data && data.success === true) {
+                setLoggedIn(true, username);
+                updateAuthUI();
+                activeSection.querySelectorAll('.pinUserShared, .pinPassShared').forEach(el => el.value = '');
+            } else {
+                errBox.innerText = "લોગીન નિષ્ફળ! યુઝર નેમ અથવા સિક્રેટ પિન ખોટો છે.";
+                errBox.style.display = 'block';
+            }
+        } catch (err) {
+            console.error("Login Error:", err);
+            errBox.innerText = "કનેક્શન ભૂલ! ઇન્ટરનેટ ચકાસો અથવા ફરી પ્રયાસ કરો.";
+            errBox.style.display = 'block';
+        } finally {
+            btnEl.disabled = false;
+            btnEl.innerHTML = oldText;
+        }
+    }
+
+    function logoutUser(e) {
+        if (e) e.preventDefault();
+        setLoggedIn(false);
+        updateAuthUI();
+        alert("તમે સફળતાપૂર્વક લોગ આઉટ થયા છો.");
+    }
+
+    // ============================================================
+    // DATA FETCH LOGIC
+    // ============================================================
+    let cachedData = null;
+    let isFetching = false;
+
+    function normalize(text) {
+        if (!text) return "";
+        return text.toString().replace(/[િી]/g, "િ").replace(/[ુૂ]/g, "ુ").replace(/[ં]/g, "").trim();
+    }
+
+    async function preFetchData() {
+        if (isFetching) return;
+        isFetching = true;
+        try {
+            const res = await fetch(webAppUrl + "?t=" + new Date().getTime(), { cache: "no-store" });
+            cachedData = await res.json();
+            const activeSection = document.querySelector('.section.active');
+            if (activeSection) updateUI(activeSection.id);
+        } catch (e) { console.error("Fetch Error", e); }
+        isFetching = false;
+    }
+
+    function showPage(id){
+        document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+        document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+        const activeLink = document.getElementById('link-'+id);
+        if(activeLink) activeLink.classList.add('active');
+        updateAuthUI();
+        preFetchData();
+        updateUI(id);
+        window.scrollTo({top:0, behavior:'smooth'});
+    }
+
+    function updateUI(id) {
+        if (!cachedData) {
+            if (id === 'donors') document.getElementById('donorLoader').style.display = 'block';
+            if (id === 'education') document.getElementById('eduLoader').style.display = 'block';
+            return;
+        }
+        if (id === 'donors') renderDonors(cachedData.donors.slice(1));
+        if (id === 'education') renderEducation(cachedData.education.slice(1));
+    }
+
+    // ============================================================
+    // SEARCH & TABLE LOGIC
+    // ============================================================
+    function openResultsInNewWindow(matches, title) {
+        const newWin = window.open('', '_blank');
+        let rows = matches.map((m, idx) => `
+            <tr style="background:${idx % 2 === 0 ? '#ffffff' : '#f9f9f9'};">
+                <td style="padding:12px; border:1px solid #ddd; text-align:center;">${idx+1}</td>
+                <td style="padding:12px; border:1px solid #ddd; font-weight:bold; color:#002347;">${m[0]}</td>
+                <td style="padding:12px; border:1px solid #ddd; text-align:center;">${m[1]||"-"}</td>
+                <td style="padding:12px; border:1px solid #ddd; text-align:center;">${m[3]||"-"}</td>
+                <td style="padding:12px; border:1px solid #ddd;">${m[2]||"-"}</td>
+            </tr>
+        `).join('');
+        newWin.document.write(`<html><head><title>${title}</title><style>body{font-family:'Hind Vadodara',sans-serif;padding:20px;background:#f4f7f9;}table{width:100%;border-collapse:collapse;background:#fff;}th{background:#002347;color:#fff;padding:15px;}</style></head><body><h2>${title}</h2><table><thead><tr><th>ક્રમ</th><th>નામ</th><th>મોબાઈલ</th><th>સભ્યો</th><th>સરનામું</th></tr></thead><tbody>${rows}</tbody></table></body></html>`);
+        newWin.document.close();
+    }
+
+    async function doSearch() {
+        if (!isLoggedIn()) { alert("પહેલા લોગીન કરો."); return; }
+        const query = document.getElementById('memberInput').value.trim();
+        if(!query) return alert("નામ લખો");
+        document.getElementById('searchLoader').style.display = 'block';
+        await preFetchData();
+        document.getElementById('searchLoader').style.display = 'none';
+        if(cachedData && cachedData.members) {
+            const matches = cachedData.members.slice(1).filter(r => r[0] && normalize(r[0]).includes(normalize(query)));
+            if(matches.length > 0) openResultsInNewWindow(matches, "શોધ પરિણામ: " + query);
+            else alert("માહિતી મળી નથી.");
+        }
+    }
+
+    async function filterBySurname(surname) {
+        if (!isLoggedIn()) { alert("પહેલા લોગીન કરો."); return; }
+        document.getElementById('searchLoader').style.display = 'block';
+        await preFetchData();
+        document.getElementById('searchLoader').style.display = 'none';
+        if(cachedData && cachedData.members) {
+            let matches;
+            let title = surname === 'ALL' ? "સમસ્ત બ્રહ્મ સમાજ યાદી" : surname + " પરિવાર યાદી";
+            if(surname === 'ALL') { matches = cachedData.members.slice(1); }
+            else { matches = cachedData.members.slice(1).filter(r => r[0] && normalize(r[0]).includes(normalize(surname))); }
+            if(matches.length > 0) openResultsInNewWindow(matches, title);
+            else alert("ડેટા ઉપલબ્ધ નથી.");
+        }
+    }
+
+    function renderDonors(list) {
+        if(document.getElementById('donorLoader')) document.getElementById('donorLoader').style.display = 'none';
+        const grid = document.getElementById('donorGrid');
+        grid.innerHTML = "";
+        list.forEach(r => { if(r[0]) grid.innerHTML += `<div class="donor-card"><span class="d-name">${r[0]}</span><span style="font-size:0.85rem; color:#666;">${r[1]||'-'}</span><span class="d-amount">₹ ${r[2]||'0'}</span></div>`; });
+    }
+
+    function filterDonors() {
+        const q = normalize(document.getElementById('donorSearchInput').value);
+        if(cachedData && cachedData.donors) renderDonors(cachedData.donors.slice(1).filter(d => d[0] && normalize(d[0]).includes(q)));
+    }
+
+    function renderEducation(list) {
+        if(document.getElementById('eduLoader')) document.getElementById('eduLoader').style.display = 'none';
+        const grid = document.getElementById('eduGrid');
+        grid.innerHTML = "";
+        list.forEach(r => { if(r[0]) grid.innerHTML += `<div class="edu-card"><div class="edu-icon"><i class="fas fa-user-graduate"></i></div><div><div class="d-name">${r[0]}</div><div style="font-size:0.9rem; color:var(--deep-orange); font-weight:600;">${r[1]||'-'}</div><div style="font-size:0.85rem;"><i class="fas fa-phone-alt"></i> ${r[2]||'-'}</div></div></div>`; });
+    }
+
+    // ============================================================
+    // WHATSAPP MESSAGES
+    // ============================================================
+    function sendWhatsAppMessage() {
+        const name = document.getElementById('wa_name').value.trim();
+        const mobile = document.getElementById('wa_mobile').value.trim();
+        const email = document.getElementById('wa_email').value.trim();
+        const msg = document.getElementById('wa_msg').value.trim();
+
+        if(!name || !mobile || !msg) {
+            alert("કૃપા કરીને નામ, મોબાઈલ અને સંદેશ ભરો.");
+            return;
+        }
+
+        const text = `*નવો સંદેશ (બ્રહ્મ સમાજ ભાટિયા વેબસાઇટ)*%0A%0A*નામ:* ${name}%0A*મોબાઈલ:* ${mobile}%0A*ઇમેઇલ:* ${email || 'નથી આપેલો'}%0A*સંદેશ:* ${msg}`;
+        const wpUrl = `https://api.whatsapp.com/send?phone=919427224308&text=${text}`;
+        window.open(wpUrl, '_blank');
+    }
+
+    function sendCollectionWhatsApp() {
+        const name = document.getElementById('coll_name').value.trim();
+        const mobile = document.getElementById('coll_mobile').value.trim();
+        const address = document.getElementById('coll_address').value.trim();
+        const members = document.getElementById('coll_members').value.trim();
+
+        if(!name || !mobile || !address || !members) {
+            alert("કૃપા કરીને બધી જ ફરજિયાત માહિતી ભરો.");
+            return;
+        }
+
+        const text = `*પુસ્તિકા માટેની નવી માહિતી (બ્રહ્મ સમાજ ભાટિયા)*%0A%0A*નામ:* ${name}%0A*મોબાઈલ:* ${mobile}%0A*સરનામું:* ${address}%0A*કુલ સભ્યો:* ${members}`;
+        const wpUrl = `https://api.whatsapp.com/send?phone=919725926906&text=${text}`;
+        window.open(wpUrl, '_blank');
+    }
+
+    // ============================================================
+    // AD SLIDER
+    // ============================================================
+    const adData = [
+        { img: "https://drive.google.com/file/d/15CKHZgA0yT__3NM01sSpA1wboUFtEzXC/view?usp=drivesdk", link: "https://wa.me/919427774162" },
+        { img: "https://i.ibb.co/pLp007/image.jpg", link: "https://facebook.com" }
+    ];
+
+    function fixImageURL(url) {
+        if (url.includes("drive.google.com")) {
+            let id = url.split('/d/')[1].split('/')[0];
+            return `https://lh3.googleusercontent.com/d/${id}`;
+        }
+        return url;
+    }
+
+    let adIdx = 0;
+    function updateAd() {
+        const img = document.getElementById('adImg');
+        const link = document.getElementById('adLink');
+        if(!img || adData.length === 0) return;
+        img.style.opacity = 0.4;
+        setTimeout(() => {
+            img.src = fixImageURL(adData[adIdx].img);
+            link.href = adData[adIdx].link;
+            img.style.opacity = 1;
+        }, 200);
+    }
+    function nextAd() { adIdx = (adIdx + 1) % adData.length; updateAd(); }
+    function prevAd() { adIdx = (adIdx - 1 + adData.length) % adData.length; updateAd(); }
+    setInterval(nextAd, 4000);
+
+    // ============================================================
+    // INITIAL LOAD
+    // ============================================================
+    window.onload = () => {
+        updateAuthUI();
+        preFetchData();
+        updateAd();
+    };
+</script>
+</body>
+</html>
